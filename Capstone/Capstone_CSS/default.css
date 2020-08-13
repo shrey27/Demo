@@ -1,0 +1,61 @@
+body {
+    color: #2A4560;
+    background-image: url(bg.jpg);
+	background-size: cover;
+	font-family: 'Josefin Slab', Arial, sans-serif;
+	font-size: 13px;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 40px ;
+    color: #fff;
+}
+
+header, header a {
+    color: #fff;
+}
+div {
+    background-color:none;
+    color: #2A4560;
+}
+footer {
+    background-color:none;
+}
+
+footer p {
+    color: #fff;
+}
+
+ul#features > li a {   
+    color:red;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+header, footer, h1 {
+    text-align: left;
+}
+header,div, footer{
+    
+    margin: 5px;
+    padding: 0px;
+}
+
+img {
+    display: block;
+}
+
+footer {
+    padding: 1em;
+}
+
+h3{
+	margin:0px;
+	padding:20px;
+    text-align:left;
+	color: #92a5de;
+	text-align: center;
+
+font: bold 40px Sans-Serif;
+}
