@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+</head>
+<style>
+   
+</style>
+<body>
+    <img src="C:\Users\shrey.pandey\Desktop\web basics\friends.jpg" alt="friends image" 
+    width="600px" height="400px">  
+    <h1 style="text-align:center;font-family:Verdana, Geneva, Tahoma, sans-serif">Friendship Zone</h1> 
+    <form action="RegistrationFormhtml" method="POST" target="_blank">
+        <label for="fname"><b>Name:</b></label>
+        <input id="fname" type="text" name="name" minlength="3" placeholder="Enter your Name" required>
+        <br></br>
+        <label for="email"><b>Email:</b></label>
+        <input id="email" type="email" name="email" minlength="3" pattern=".+@.+" required>
+        <br></br>
+        <label for="number"><b>Age:</b></label>
+        <input id="number" type="number" name="number" min="18" required>
+        <br></br>
+        <label for="date"><b>Birth Date:</b></label>
+        <input id="date" type="date" name="date">
+        <br></br>
+        <label for="gender"><b>Gender:</b></label>
+        <input id="gender" type="radio" name="male">
+        <label for="gender"><b>Male</b></label>
+        <input id="female" type="radio" name="female">
+        <label for="female"><b>Female</b></label>
+        <br></br>
+        <label id="about"><b>About:</b></label>
+        <input style="height: 100px;width: 300px;" id="about" type="text" max="200">
+        <br></br>
+        <label for="phone"><b>Phone:</b></label>
+        <input id="phone" type="tel">
+        <br></br>
+        <label for="interested"><b>Interested in:</b></label>
+        <input id="interested" type="radio">
+        <label for="interested">Friendship</label>
+        <input id="dating" type="radio">
+        <label for="dating">Dating</label>
+        <br></br>
+        <label for="file"><b>Attachment:</b></label>
+        <input id="file" type="file">
+        <br></br>
+        <button type="submit" formaction="RegistrationConfirmation.html" formtarget="_blank">
+            Register</button>
+        <button type="submit" formaction="RegistrationConfirmationAdmin.html" formtarget="_blank">
+            Register as Admin</button>
+    </form>
+</body>
