@@ -562,3 +562,69 @@ try {
   console.log(e);
   // expected output: ReferenceError: test is not defined
 }*/
+
+// Deep Cloning an object using recursion
+/*
+const obj = {
+  a:{
+    b:{
+      c:1
+    }
+  }
+}
+
+function cloneObject(obj){
+  let target = {};
+  Object.keys(obj).forEach(
+    item => {
+      const value = obj[item];
+      if(typeof value !== 'object'){
+        target[item] = value;
+      }
+      else{
+        target[item] = cloneObject(value);
+      }
+    }
+  )
+  return target;
+}
+const objNew = cloneObject(obj);
+console.log(objNew);
+*/
+
+//when does arrow function refers to window
+//(1)
+// var obj = { // does not create a new scope
+//   i: 10,
+//   b: () => console.log(this.i, this),
+//   c: function() {
+//     console.log(this.i, this);
+//   }
+// }
+//(2)
+// obj.b(); // prints undefined, Window {...} (or the global object)
+// obj.c(); // prints 10, Object {...}
+
+// var obj = {
+//   count : 10,
+//   doSomethingLater : function (){
+//       setTimeout(function(){ // the function executes on the window scope
+//           this.count++;
+//           console.log(this.count);
+//       }, 300);
+//   }
+// }
+
+// obj.doSomethingLater(); // console prints "NaN", because the property "count" is not in the window scope.
+//(3)
+// var obj = {
+//   count : 10,
+//   doSomethingLater : function(){ // of course, arrow functions are not suited for methods
+//       setTimeout( () => { // since the arrow function was created within the "obj", it assumes the object's "this"
+//           this.count++;
+//           console.log(this.count);
+//       }, 300);
+//   }
+// }
+
+// obj.doSomethingLater();
