@@ -21,10 +21,11 @@
 // let newPrintMyName = printName.myBind(name, 'Jaipur');
 // newPrintMyName('Rajasthan', 'India');
 
+//Bubbling and capturing
 // document.querySelector('#grandparent')
 // .addEventListener('click',()=>{
 //     console.log('Grandparent Clicked');
-// },false);
+// },true);
 
 // document.querySelector('#parent')
 // .addEventListener('click',()=>{
@@ -84,6 +85,15 @@
 //     .then(showAvatar)
 //     .then(githubUser => alert(`Finished showing ${githubUser.name}`));
 //     // ...
+
+//Spread Operator
+/*
+Merge: [...arg1,...arg2]
+Clone: [...arg2]
+String to Array: [...'string']
+Set to Array: [...new Set([1,2,3])]
+Arguements to array: [...arguements]
+*/
 
 // /**
 //  * Polyfill for array functions created in Array prototype
@@ -164,20 +174,24 @@
 // console.log(
 //   logicAlbums.albumReduce(
 //     function(a,b){
+//       if(a==='Singers: ') return a+' '+b;
 //       return a+' , '+b;
 //     },'Singers: ')
 // )
 
-// function func() {};
+// function func() {
+//   this.name = 'FUNCTION'
+// };
 
 // // Create a new instance using function prototype.
-// var newInstance = Object.create(func.prototype)
+// //var newInstance = Object.create(func)// Function {}
+// var newInstance = Object.create(func.prototype)// func {}
 // console.log(newInstance);
 // // Call the function
 // var result = func.call(newInstance, 2,3,4);
 // console.log(result);
 // // If the result is a non-null object then use it otherwise just use the new instance.
-// console.log(undefined && typeof result === 'object' ? result : newInstance);
+// console.log(typeof result === 'object' ? result : newInstance);
 
 // var employee1 = {firstName: 'John', lastName: 'Rodson'};
 // var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
@@ -189,6 +203,8 @@
 // invite.apply(employee1, ['Hello', 'How are you?']); // Hello John Rodson, How are you?
 // invite.apply(employee2, ['Hello', 'How are you?']); // Hello Jimmy Baily, How are you?
 // let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
+// console.log(arrayIntegersOriginal1.slice(3));
+// console.log(arrayIntegersOriginal1);
 // let arrayIntegersOriginal2 = [1, 2, 3, 4, 5];
 // let arrayIntegersOriginal3 = [1, 2, 3, 4, 5];
 
@@ -246,13 +262,13 @@
 // console.log(addition(20)); //output: 40 calculated
 // console.log(addition(20)); //output: 40 cached
 
-// x = 3.149;       // This will not cause an error.
-// myFunction();
+//  x = 3.149;       // This will not cause an error.
+//  myFunction();
 
 // function myFunction() {
-//   //"use strict";
+//   "use strict";
 //   y = 3.14;   // This will cause an error
-//   console.log(x,y);
+//   console.log(y);
 // }
 // console.log(x,y);
 
@@ -298,7 +314,7 @@
 //new variables will be created in the prototype of the
 
 /**
- * 
+ * Attributes of properties in an object
  * value: The value associated with the property
  * writable: Determines whether the value associated with the property can be changed or not
  * configurable: Returns true if the type of this property descriptor can be changed and if the property can be deleted from the corresponding object.
@@ -348,7 +364,7 @@
 //   perimeter: () => 2 * Math.PI * this.radius
 // };
 
-// console.log(['a'] + ['b']);  // "ab"
+// console.log(['a','d'] + ['b','c']);  // a,db,c
 // console.log([] + []); // ""
 // console.log(![] + []); // "false", because ![] returns false.
 
@@ -442,7 +458,8 @@ console.log(array); // []
  */
 //Iterator over object properties
 /**
- * const collection = {
+ * 
+  const collection = {
   one: 1,
   two: 2,
   three: 3,
@@ -533,21 +550,21 @@ Myfunc.call({}); not called with new
 // i.e, Rest parameter is opposite to the spread operator.
 
 //for...in for...of
-/*
-let arr = ['a', 'b', 'c'];
 
-arr.newProp = 'newVlue';
+// let arr = ['a', 'b', 'c'];
 
-// key are the property keys
-for (let key in arr) {
-  console.log(key);
-}
+// arr.newProp = 'newVlue';
 
-// value are the property values
-for (let value of arr) {
-  console.log(value);
-}
-*/
+// // key are the property keys
+// for (let key in arr) {
+//   console.log(key);
+// }
+
+// // value are the property values
+// for (let value of arr) {
+//   console.log(value);
+// }
+
 
 // void with IIFE
 /*
@@ -593,7 +610,7 @@ console.log(objNew);
 */
 
 //when does arrow function refers to window
-//(1)
+// (1)
 // var obj = { // does not create a new scope
 //   i: 10,
 //   b: () => console.log(this.i, this),
@@ -601,10 +618,10 @@ console.log(objNew);
 //     console.log(this.i, this);
 //   }
 // }
-//(2)
 // obj.b(); // prints undefined, Window {...} (or the global object)
 // obj.c(); // prints 10, Object {...}
 
+// (2)
 // var obj = {
 //   count : 10,
 //   doSomethingLater : function (){
@@ -614,9 +631,9 @@ console.log(objNew);
 //       }, 300);
 //   }
 // }
-
 // obj.doSomethingLater(); // console prints "NaN", because the property "count" is not in the window scope.
-//(3)
+
+// (3)
 // var obj = {
 //   count : 10,
 //   doSomethingLater : function(){ // of course, arrow functions are not suited for methods
@@ -626,5 +643,53 @@ console.log(objNew);
 //       }, 300);
 //   }
 // }
-
 // obj.doSomethingLater();
+
+//Prototype Inheritance
+// let animal = {
+//   name:'Animal',
+//   getName(){
+//     console.log(`Name is ${this.name}`);
+//   }
+// }
+// let rabbit1 = {
+//   name:'Rabbit',
+//   __proto__:animal
+// }
+// let rabbit2 = {
+//   __proto__:animal
+// }
+// rabbit1.getName(); // Name is Rabbit
+// rabbit2.getName(); // Name is Animal
+
+//currying
+// function sum(a, b, c) {
+//   return a + b + c;
+// }
+
+// let curriedSum = _.curry(sum); // using _.curry from lodash library
+
+// console.log( curriedSum(1, 2, 3) ); 
+// console.log( curriedSum(1)(2)(3) ); 
+// let fruits = {
+//   name1:'apple',
+//   name2:'banana',
+//   name3:'peaches'
+// }
+// for(key in {...fruits}){
+// console.log(fruits[key]);
+// }
+// var fruits = ["banana", "apple", "orange", "watermelon"];
+// var fruitsObject = {...fruits};
+// console.log(Object.values(fruitsObject));
+// let obj = {
+//  a:{
+//    b:{
+//      c:{
+//        d:1
+//      }
+//    }
+//  }
+// }
+// let cloneObj = JSON.parse(JSON.stringify(obj)); 
+// console.log(cloneObj);
