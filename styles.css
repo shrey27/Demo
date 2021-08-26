@@ -1,0 +1,76 @@
+input{
+    width: 30rem;
+    height: 2rem;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+button{
+    width: 5rem;
+    height: 2rem;
+    padding: 5px;
+    font-size: 1rem;
+    color:white;
+    background-color: #5c8d8b;
+    border: none;
+}
+table{
+    border: 2px solid #006a67;
+    border-collapse: collapse;
+    color:#006a67;
+    font-weight: bold;
+    width: 100%;
+    table-layout: fixed;
+}
+tbody{
+    display: table-row-group;
+    border:inherit;
+    vertical-align: middle;
+}
+tr{
+    border:inherit;
+    background-color: #5c8d8b;
+    vertical-align: inherit;
+}
+td{
+    border:inherit;
+    padding: 5px;
+    background-color: white;
+    vertical-align: inherit;
+}
+
+/***************************************/
+
+.bill-btn{
+    display: inline;
+}
+.removeBtn{
+    display: none;
+}
+
+/***************************************/
+
+.register{
+    background-color: #006a67;
+    max-width: 500px;
+    color:white;
+    padding:2rem 1rem;
+    text-align: center;
+    margin:-10px auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/***************************************/
+
+.change, .cash{
+    display: none;
+}
+.bill-error, .cash-error{
+    display: none;
+}
+.showBlock{
+    display: block;
+}
+
+/***************************************/
+
+
